@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="lib/materialize/css/materialize.min.css" media="screen,projection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body ng-app="mySiteApp" ng-controller="mySiteController" class="">
+    
+    
+    
+    <div class="container">
+        
+        <input ng-model="query" type="text">
+        
+        <div class="row">
+            <h4>EMIT Application</h4>
+        </div>
+
+        <div class="row">
+            <div ng-repeat="card in cardList | filter : search" ng-animate=" 'animate' " class="col s12 m3">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="res/office.jpg">
+                        <span class="card-title">{{card}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+    <script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="lib/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
