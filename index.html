@@ -10,7 +10,7 @@
 
 <body ng-app="mySiteApp" ng-controller="mySiteController" class="light-blue">
 
-    <nav class="blue darken-3">
+    <!--nav class="blue darken-3">
         <div class="nav-wrapper">
             <div class="input-field">
                 <input id="emsearch" type="search" placeholder="EM Search" required>
@@ -18,15 +18,28 @@
                 </label>
             </div>
         </div>
-    </nav>
+    </nav-->
+
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <h5 id="greeting" class="header center white-text">Hello Isara!</h5>
+                <div class="input-field">
+                    <input id="emsearch" type="search" placeholder="EM Search" required>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="row valign-wrapper">
             <div class="col m8 valign">
                 <h3></h3>
             </div>
-            <div class="col m4 valign">
-                <input id="favsearch" ng-model="query" type="text" placeholder="Favorites Search">
+            <div class="col m4 valign favsearchbox">
+                <div class="input-field">
+                    <input id="favsearch" ng-model="query" type="text" placeholder="Favorites Search">
+                </div>
             </div>
         </div>
 
@@ -40,17 +53,20 @@
                     </div>
                 </div>
                 <div class="row innerrow">
-                    <div ng-repeat="card in group.sites | filter : search" ng-animate=" 'animate' " class="col s12 m4 l3">
-                        <div class="card blue darken-2 hoverable">
-                            <a href="{{card.URL}}" target="_blank">
+                    <div ng-repeat="card in group.sites | filter : search" class="col s12 m4 l3">
+                        <div class="card orange accent-3 hoverable waves-effect waves-light wavecard">
+                            <a href="{{card.URL}}">
                                 <div class="card-content white-text">
                                     <span class="card-title">{{card.name}}</span>
                                 </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
     </div>
 
     <script type="text/javascript" src="lib/angular.min.js"></script>

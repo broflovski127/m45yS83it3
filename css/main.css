@@ -1,7 +1,40 @@
 #favsearch {
-     margin : 0;    
+    margin: 0;
 }
-.row.innerrow{
-    margin-left : 2em; 
-    margin-right : 2em; 
+.row.innerrow {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+#index-banner {
+    //background-image: url('/res/office.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 15em;
+}
+#greeting {
+    margin-top: 2em;
+}
+#emsearch {
+    margin-top: 3em;
+    background: white;
+}
+
+#favsearch input-placeholder { 
+    color:    #FFF;
+}
+#favsearch  { 
+    color:    #FFF;
+}
+.favsearchbox .input-field label {
+    color: #000;
+}
+.favsearchbox .input-field input[type=text]:focus + label {
+    color: #FFF;
+}
+.favsearchbox .input-field input[type=text]:focus {
+    border-bottom: 1px solid #FFF;
+    box-shadow: 0 1px 0 0 #FFF;
+}
+.wavecard {
+    display: block;   
 }
