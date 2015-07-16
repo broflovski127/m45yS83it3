@@ -31,7 +31,13 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" ng-show="bLoading">
+        <div class="progress">
+            <div class="indeterminate orange accent-3"></div>
+        </div>
+    </div>
+
+    <div class="container" ng-show="!bLoading">
         <div class="row valign-wrapper">
             <div class="col m8 valign">
                 <h3></h3>
@@ -45,7 +51,7 @@
 
 
 
-        <div ng-repeat="group in cardListFull">
+        <div ng-repeat="group in groupList">
             <div class="card" ng-show="filterNonEmptyGroup(group)">
                 <div class="row innerrow">
                     <div class="col s12 light-blue-text">
@@ -53,11 +59,11 @@
                     </div>
                 </div>
                 <div class="row innerrow">
-                    <div ng-repeat="card in group.sites | filter : search" class="col s12 m4 l3">
+                    <div ng-repeat="card in group.cardList | filter : filterCard" class="col s12 m4 l3">
                         <div class="card orange accent-3 hoverable waves-effect waves-light wavecard">
-                            <a href="{{card.URL}}">
+                            <a href="{{card.url}}">
                                 <div class="card-content white-text">
-                                    <span class="card-title">{{card.name}}</span>
+                                    <span class="card-title">{{card.title}}</span>
                                 </div>
                             </a>
                         </div>
@@ -72,6 +78,7 @@
     <script type="text/javascript" src="lib/angular.min.js"></script>
     <script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="lib/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.SPServices-2014.02.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 
